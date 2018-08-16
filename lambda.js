@@ -2,7 +2,7 @@ Array.prototype.where = function () {
     var args = arguments[0].toString();
     var matches = args.match(/(\w)(\s+)?=>(.*)+/);
     if (!matches) {
-        console.error('invalid expression.');
+        console.error('错误的表达式');
         return;
     }
     var name = matches[1];
@@ -25,7 +25,7 @@ Array.prototype.select = function () {
     var args = arguments[0].toString();
     var matches = args.match(/(\w)(\s+)?=>(.*)+/);
     if (!matches) {
-        console.error('invalid expression .');
+        console.error('错误的表达式 .');
         return;
     }
     var name = matches[1];
@@ -49,14 +49,14 @@ Array.prototype.distinct = function () {
     var args = arguments[0].toString();
     var matches = args.match(/(\w)(\s+)?=>(.*)+/);
     if (!matches) {
-        console.error('invalid expression .');
+        console.error('错误的表达式 .');
         return;
     }
     var name = matches[1];
     var expression = matches[3];
     matches = expression.match(/\.(\w+)/);
     if (!matches) {
-        console.error('invalid expression .');
+        console.error('错误的表达式 .');
         return;
     }
     var property = matches[1];
