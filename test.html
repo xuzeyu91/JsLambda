@@ -11,12 +11,15 @@
 
                 console.time("where");
                 var mres = arrs.where(x => x % 5 == 0);
+                //找到arrs中数值是5的倍数的元素
                 console.timeEnd("where");
                 console.time("select");
                 var seles = models.select(a => a.age);
+                //找到models中 age对象的集合
                 console.timeEnd("select");
                 console.time("distinct");
                 var distic = models.distinct(a => a.age);
+                //根据 age属性过滤重复数据
                 console.timeEnd("distinct");
         </script>
     </head>
