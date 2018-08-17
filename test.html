@@ -2,25 +2,23 @@
     <head>
         <script src="lambda.js"></script>
         <script>
-            debugger;
              var arrs = [], models = [];
                 for (var i = 0; i < 10000; i++) {
                     arrs.push(i);
                     models.push({ age: i, name: 'name' + i });
                 }
 
-                console.time("where");
-                var mres = arrs.where(x => x % 5 == 0);
-                //找到arrs中数值是5的倍数的元素
-                console.timeEnd("where");
-                console.time("select");
-                var seles = models.select(a => a.age);
-                //找到models中 age对象的集合
-                console.timeEnd("select");
-                console.time("distinct");
-                var distic = models.distinct(a => a.age);
-                //根据 age属性过滤重复数据
-                console.timeEnd("distinct");
+                // //找到arrs中数值是5的倍数的元素
+                // var mres = arrs.where(x => x % 5 == 0);
+                // //找到models中 age对象的集合
+                // var seles = models.select(a => a.age);
+                // //根据 age属性过滤重复数据
+                // var distic = models.distinct(a => a.age);
+                // //找出数组中最大的值
+                // var max = models.max(a => a.age);
+                //找出数组中最小的值
+                var min = models.min(a => a.age);
+                debugger;
         </script>
     </head>
     <body>
