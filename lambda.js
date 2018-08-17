@@ -1,4 +1,5 @@
 Array.prototype.where = function () {
+    if (!this) return [];
     var args = arguments[0].toString();
     var matches = args.match(/(\w)(\s+)?=>(.*)+/);
     if (!matches) {
@@ -7,8 +8,6 @@ Array.prototype.where = function () {
     }
     var name = matches[1];
     var expression = matches[3];
-
-    if (!this) return [];
     var result = [];
     this.forEach(function (value, index, array) {
         eval('var rpr=/' + name + '/g');
@@ -22,6 +21,7 @@ Array.prototype.where = function () {
 };
 
 Array.prototype.select = function () {
+    if (!this) return [];
     var args = arguments[0].toString();
     var matches = args.match(/(\w)(\s+)?=>(.*)+/);
     if (!matches) {
@@ -46,6 +46,7 @@ Array.prototype.select = function () {
 };
 
 Array.prototype.distinct = function () {
+    if (!this) return [];
     var args = arguments[0].toString();
     var matches = args.match(/(\w)(\s+)?=>(.*)+/);
     if (!matches) {
@@ -77,6 +78,7 @@ Array.prototype.distinct = function () {
 };
 
 Array.prototype.max = function () {
+    if (!this) return {};
     var args = arguments[0].toString();
     var matches = args.match(/(\w)(\s+)?=>(.*)+/);
     if (!matches) {
@@ -106,6 +108,7 @@ Array.prototype.max = function () {
 }
 
 Array.prototype.min = function () {
+    if (!this) return {};
     var args = arguments[0].toString();
     var matches = args.match(/(\w)(\s+)?=>(.*)+/);
     if (!matches) {
@@ -137,6 +140,7 @@ Array.prototype.min = function () {
 }
 
 Array.prototype.orderBy = function () {
+    if (!this) return [];
     var args = arguments[0].toString();
     var matches = args.match(/(\w)(\s+)?=>(.*)+/);
     if (!matches) {
@@ -156,6 +160,7 @@ Array.prototype.orderBy = function () {
 }
 
 Array.prototype.orderByDesc = function () {
+    if (!this) return [];
     var args = arguments[0].toString();
     var matches = args.match(/(\w)(\s+)?=>(.*)+/);
     if (!matches) {
