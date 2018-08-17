@@ -3,8 +3,7 @@
         <script src="lambda.js"></script>
         <script>
              var arrs = [], models = [];
-               
-
+            
                 //找到arrs中数值是5的倍数的元素
                 var where = [20, 33, 40, 89, 55].where(x => x % 5 == 0);
                 //找到models中 age对象的集合
@@ -16,8 +15,9 @@
                 //找出数组中最小的值
                 var min = [{ age: 423 }, { age: 120 }, { age: 120 }, { name: 'leo', age: 80 }, { name: 'leo', age: 80 }].min(a => a.age);
                 //根据指定字段升序排序
-                var orderby=[{age:3},{age:2},{age:15},{age:1}].orderby(p=>p.age);
-                
+                var orderby=[{age:3},{age:2},{age:15},{age:1}].orderBy(p=>p.age);
+                //根据指定字段升序降序
+                var orderbydesc = [{ age: 3 }, { age: 2 }, { age: 15 }, { age: 1 }].orderByDescending(p => p.age);
                 debugger;
         </script>
     </head>
