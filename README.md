@@ -13,7 +13,9 @@ js实现c#中Lambda表达式
   return:{age:423}<br><br>
   var min = [{age:423},{age:120},{age:120},{name:'leo',age:80},{name:'leo',age:80}].min(a=>a.age);<br>
   return:{name:'leo',age:80}<br><br>
-  var orderby=[{age:3},{age:2},{age:15},{age:1}].orderby(p=>p.age);<br>
+  var orderby=[{age:3},{age:2},{age:15},{age:1}].orderBy(p=>p.age);<br>
   return:[{"age":1},{"age":2},{"age":3},{"age":15}]<br><br>
+  var orderbydesc=[{age:3},{age:2},{age:15},{age:1}].orderByDesc(p=>p.age);<br>
+  return:[{"age":15},{"age":3},{"age":2},{"age":1}]<br><br>
 
 后期会增加其他lambda表达式
