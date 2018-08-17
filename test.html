@@ -3,21 +3,21 @@
         <script src="lambda.js"></script>
         <script>
              var arrs = [], models = [];
-                for (var i = 0; i < 10000; i++) {
-                    arrs.push(i);
-                    models.push({ age: i, name: 'name' + i });
-                }
+               
 
-                // //找到arrs中数值是5的倍数的元素
-                // var mres = arrs.where(x => x % 5 == 0);
-                // //找到models中 age对象的集合
-                // var seles = models.select(a => a.age);
-                // //根据 age属性过滤重复数据
-                // var distic = models.distinct(a => a.age);
-                // //找出数组中最大的值
-                // var max = models.max(a => a.age);
+                //找到arrs中数值是5的倍数的元素
+                var where = [20, 33, 40, 89, 55].where(x => x % 5 == 0);
+                //找到models中 age对象的集合
+                var seles = [{ age: 423 }, { age: 120 }, { name: 'leo', age: 80 }].select(a => a.age);
+                //根据 age属性过滤重复数据
+                var distic = [{ age: 423 }, { age: 120 }, { age: 120 }, { name: 'leo', age: 80 }, { name: 'leo', age: 80 }].distinct(a => a.age);
+                //找出数组中最大的值
+                var max = [{ age: 423 }, { age: 120 }, { age: 120 }, { name: 'leo', age: 80 }, { name: 'leo', age: 80 }].max(a => a.age);
                 //找出数组中最小的值
-                var min = models.min(a => a.age);
+                var min = [{ age: 423 }, { age: 120 }, { age: 120 }, { name: 'leo', age: 80 }, { name: 'leo', age: 80 }].min(a => a.age);
+                //根据指定字段升序排序
+                var orderby=[{age:3},{age:2},{age:15},{age:1}].orderby(p=>p.age);
+                
                 debugger;
         </script>
     </head>

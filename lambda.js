@@ -135,3 +135,35 @@ Array.prototype.min = function () {
     });
     return result;
 }
+
+Array.prototype.orderby = function () {
+    var args = arguments[0].toString();
+    var matches = args.match(/(\w)(\s+)?=>(.*)+/);
+    if (!matches) {
+        console.error('错误的表达式');
+        return;
+    }
+    var name = matches[1];
+    var expression = matches[3];
+    matches = expression.match(/\.(\w+)/);
+    if (!matches) {
+        console.error('错误的表达式 .');
+        return;
+    }
+    var property = matches[1];
+    var result = this.sort(compare(property));
+    
+    return result;
+}
+var compare = function (prop) {
+    return function (obj1, obj2) {
+        var val1 = obj1[prop];
+        var val2 = obj2[prop]; if (val1 < val2) {
+            return -1;
+        } else if (val1 > val2) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+}
