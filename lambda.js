@@ -179,6 +179,15 @@ Array.prototype.orderByDesc = function () {
     return result;
 }
 
+Array.prototype.contains = function (val) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == val) {
+            return true;
+        }
+    }
+    return false;
+}
+
 var xzyCompare = function (prop) {
     return function (obj1, obj2) {
         var val1 = obj1[prop];

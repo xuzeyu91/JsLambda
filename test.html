@@ -3,7 +3,7 @@
         <script src="lambda.js"></script>
         <script>    
                 //找到arrs中数值是5的倍数的元素
-                var where = [20, 33, 40, 89, 55].where(x => x % 5 == 0);
+                var where = [20, 33, 40, 89, 55].where(x => x % 5 == 0||x==89);
                 //找到models中 age对象的集合
                 var seles = [{ age: 423 }, { age: 120 }, { name: 'leo', age: 80 }].select(a => a.age);
                 //根据 age属性过滤重复数据
@@ -16,6 +16,8 @@
                 var orderby=[{age:3},{age:2},{age:15},{age:1}].orderBy(p=>p.age);
                 //根据指定字段升序降序
                 var orderbydesc = [{ age: 3 }, { age: 2 }, { age: 15 }, { age: 1 }].orderByDesc(p => p.age);
+                //判断数组是否包括该元素
+                var flag=[2,3,5,6].contains(5);
                 debugger;
         </script>
     </head>
